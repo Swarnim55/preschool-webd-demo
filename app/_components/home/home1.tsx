@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ChevronDown, Menu, X, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from 'next/image'
 
 const images = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460995081_1068244768636880_613704042115508009_n-mlfl0W46qDRooSRYTZCRujvfaUzpyL.jpg",
@@ -248,10 +249,12 @@ export default function Home1() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <img
+                <Image
                   src="/placeholder.svg?height=400&width=600"
                   alt="Children in classroom"
                   className="rounded-lg shadow-xl"
+                  width={600}
+                  height={400}
                 />
               </motion.div>
             </div>
@@ -270,9 +273,11 @@ export default function Home1() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]"
                 >
-                  <img
+                  <Image
                     src={src}
                     alt={`Featured image ${index + 1}`}
+                    width={400}
+                    height={600}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
