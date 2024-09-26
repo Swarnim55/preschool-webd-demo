@@ -1,12 +1,15 @@
 "use client"
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ChevronDown, Menu, X, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
+
+import f1 from "@/public/p1.jpg"
+import f2 from "@/public/p2.jpg"
+import { default as AboutPic, default as f3 } from "@/public/p3.jpg"
+import { AnimatePresence, motion } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { FaWhatsapp } from "react-icons/fa"
 
 const images = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460995081_1068244768636880_613704042115508009_n-mlfl0W46qDRooSRYTZCRujvfaUzpyL.jpg",
@@ -15,24 +18,19 @@ const images = [
 ]
 
 const featuredImages = [
-  "/placeholder.svg?height=300&width=400",
-  "/placeholder.svg?height=300&width=400",
-  "/placeholder.svg?height=300&width=400",
-  "/placeholder.svg?height=300&width=400",
-  "/placeholder.svg?height=300&width=400",
-  "/placeholder.svg?height=300&width=400",
+  f1,
+  f2,
+ "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460890598_1068245581970132_5795100644429349181_n-mPmGlgCpTM5ePp52DGT6Ar8aQQD7F5.jpg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460995081_1068244768636880_613704042115508009_n-mlfl0W46qDRooSRYTZCRujvfaUzpyL.jpg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460889775_1068245408636816_7540189376744517888_n-3npnfjw4ppswWkFk3vKS8pmjJ7INtE.jpg",
+  f3,
 ]
 
 export default function Home1() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
+ 
+
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,7 +40,7 @@ export default function Home1() {
     return () => clearInterval(timer)
   }, [])
 
-  const headerClass = scrollY > 50 ? "py-2 bg-white shadow-md" : "py-4 bg-transparent"
+
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
@@ -53,84 +51,7 @@ export default function Home1() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;700&display=swap');
-
-        body {
-          font-family: 'Nunito', sans-serif;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-          font-family: 'Bubblegum Sans', cursive;
-        }
-      `}</style>
-
-      <header className={`fixed w-full z-50 transition-all duration-300 ${headerClass}`}>
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold text-blue-600 font-bubblegum"
-            >
-              Umang Academy
-            </motion.div>
-            <nav className="hidden md:flex space-x-6">
-              {['Home', 'About', 'Classes', 'Teachers', 'Pages', 'Contact'].map((item, index) => (
-                <motion.a
-                  key={item}
-                  href="#"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-gray-700 hover:text-blue-600 transition-colors"
-                >
-                  {item}
-                  {['Classes', 'Pages'].includes(item) && <ChevronDown className="inline-block ml-1 w-4 h-4" />}
-                </motion.a>
-              ))}
-            </nav>
-            <Button
-              className="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-bubblegum"
-              size="sm"
-            >
-              Enroll Now
-            </Button>
-            <Button
-              className="md:hidden"
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      {isMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="fixed inset-0 z-40 bg-white pt-20"
-        >
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {['Home', 'About', 'Classes', 'Teachers', 'Pages', 'Contact'].map((item) => (
-              <a key={item} href="#" className="text-gray-700 hover:text-blue-600 transition-colors">
-                {item}
-              </a>
-            ))}
-            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bubblegum">
-              Enroll Now
-            </Button>
-          </nav>
-        </motion.div>
-      )}
-
-      <main>
+    <>
         <section className="relative min-h-screen">
           <div className="relative w-full h-screen overflow-hidden">
             <AnimatePresence initial={false} custom={currentIndex}>
@@ -160,7 +81,7 @@ export default function Home1() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white"
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white hover:bg-black/50 pointer"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-8 w-8" />
@@ -168,21 +89,21 @@ export default function Home1() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white"
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white hover:bg-black/50 pointer"
               onClick={nextSlide}
             >
               <ChevronRight className="h-8 w-8" />
             </Button>
           </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white">
+          <div className="absolute inset-0 flex items-center justify-around " >
+            <div className="text-center text-white bg-black/10 p-4 rounded-xl ">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="text-5xl font-bold mb-4"
               >
-                Welcome to Umang Academy
+                Welcome to Kids Paradise PreSchool
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -197,10 +118,36 @@ export default function Home1() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
+                <motion.div
+                className="flex justify-center space-x-4"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-semibold font-bubblegum">
                   Learn More
                 </Button>
+                <Button size="lg" onClick={()=>window.open("https://wa.me/9779862597101?text=I'm%20interested%20in%20your%20preschool%20for%20enrollment.")} className="bg-green-600 hover:bg-green-700 text-white font-semibold font-bubblegum">
+                  <FaWhatsapp className="w-6 h-6 mr-2" />
+                  WhatsApp Us 
+                </Button>
+                </motion.div>
               </motion.div>
+            </div>
+          {/* A div displaying admission open with enquiry form*/}
+            <div className={` bg-white/80 rounded-lg p-5 hidden lg:block`}>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl font-bold text-blue-800 mb-4">Admission Open</h2>
+                <p className="text-gray-600 mb-6">
+                  Enroll your child today and give them the best start in life with our comprehensive programs.
+                </p>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bubblegum">Enquire Now</Button>
+              </motion.div>
+             
             </div>
           </div>
         </section>
@@ -240,7 +187,7 @@ export default function Home1() {
               >
                 <h2 className="text-3xl font-bold text-blue-800 mb-4">About Our Academy</h2>
                 <p className="text-gray-600 mb-6">
-                  Umang Academy is dedicated to providing a nurturing environment where children can learn, grow, and explore. Our experienced teachers and innovative curriculum ensure that every child receives the best possible start in their educational journey.
+                  Kids Paradise PreSchool is dedicated to providing a nurturing environment where children can learn, grow, and explore. Our experienced teachers and innovative curriculum ensure that every child receives the best possible start in their educational journey.
                 </p>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bubblegum">Discover More</Button>
               </motion.div>
@@ -250,10 +197,10 @@ export default function Home1() {
                 transition={{ duration: 0.5 }}
               >
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src={AboutPic}
                   alt="Children in classroom"
-                  className="rounded-lg shadow-xl"
-                  width={600}
+                  className="rounded-lg shadow-xl hidden lg:block"
+            width={600}
                   height={400}
                 />
               </motion.div>
@@ -289,6 +236,9 @@ export default function Home1() {
                 </motion.div>
               ))}
             </div>
+            <div className="text-center mt-8">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bubblegum">View More</Button>  
+            </div>
           </div>
         </section>
 
@@ -301,59 +251,9 @@ export default function Home1() {
             </Button>
           </div>
         </section>
-      </main>
-
-      <footer className="bg-blue-800 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 font-bubblegum">Umang Academy</h3>
-              <p className="mb-4">Nurturing young minds for a brighter future.</p>
-              <div className="flex space-x-4">
-                <a href="#" className="hover:text-blue-300"><Facebook /></a>
-                <a href="#" className="hover:text-blue-300"><Twitter /></a>
-                <a href="#" className="hover:text-blue-300"><Instagram /></a>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 font-bubblegum">Quick Links</h4>
-              <ul className="space-y-2">
-                {['About Us', 'Our Classes', 'Our Teachers', 'Contact Us'].map((item) => (
-                  <li key={item}><a href="#" className="hover:text-blue-300">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 font-bubblegum">Contact Info</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center"><Phone className="mr-2 w-4 h-4" /> +1 (123) 456-7890</li>
-                <li className="flex items-center"><Mail className="mr-2 w-4 h-4" /> info@umangacademy.com</li>
-                <li className="flex items-center"><MapPin className="mr-2 w-4 h-4" /> 123 Education St, City, State 12345</li>
-                <li className="flex items-center"><Clock className="mr-2 w-4 h-4" /> Mon-Fri: 8AM-5PM</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 font-bubblegum">Newsletter</h4>
-              <p className="mb-4">Stay updated with our latest news and events.</p>
-              <form className="space-y-2">
-                <Label htmlFor="email" className="sr-only">Email Address</Label>
-                <Input
-                  type="email"
-                  id="email"
-                  placeholder="Enter your email"
-                  className="w-full bg-blue-700 border-blue-600 text-white placeholder-blue-300"
-                />
-                <Button type="submit" className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-bubblegum">
-                  Subscribe
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <div className="bg-blue-900 text-white py-4 text-center">
-        <p>&copy; 2023 Umang Academy. All rights reserved.</p>
-      </div>
-    </div>
+      </>
+   
+      
+  
   )
 }
