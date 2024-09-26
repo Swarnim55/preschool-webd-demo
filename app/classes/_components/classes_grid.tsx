@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { BookOpen, Clock, Users } from "lucide-react"
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 interface Program {
   id: number
@@ -61,6 +62,7 @@ const programs: Program[] = [
 
 export default function ProgramGrid() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const router = useRouter();
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -102,7 +104,9 @@ export default function ProgramGrid() {
                 <BookOpen className="w-5 h-5 mr-2" />
                 <span style={{ fontFamily: "'Quicksand', sans-serif" }}>Capacity: {program.capacity} children</span>
               </div>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors" style={{ fontFamily: "'Fredoka One', cursive" }}>
+              <Button 
+              onClick={()=>router.push('classes/detail/') }
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors" style={{ fontFamily: "'Fredoka One', cursive" }}>
                 Learn More
               </Button>
             </div>
