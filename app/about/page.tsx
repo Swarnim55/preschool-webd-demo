@@ -185,6 +185,8 @@ export default function AboutUs() {
             <Image
               src="/placeholder.svg?height=150&width=150"
               alt="Principal"
+              width={150}
+              height={150}
               className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-300"
             />
             <h3 className="text-xl font-semibold text-center mb-4 text-blue-700" style={{ fontFamily: "'Fredoka One', cursive" }}>Mrs. Archana Bhandari</h3>
