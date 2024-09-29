@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa"
+import Events from "../events/page"
 
 const images = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460995081_1068244768636880_613704042115508009_n-mlfl0W46qDRooSRYTZCRujvfaUzpyL.jpg",
@@ -52,6 +53,9 @@ export default function Home1() {
 
   return (
     <>
+
+
+
         <section className="relative min-h-screen">
           <div className="relative w-full h-screen overflow-hidden">
             <AnimatePresence initial={false} custom={currentIndex}>
@@ -151,32 +155,6 @@ export default function Home1() {
             </div>
           </div>
         </section>
-
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-blue-800 mb-12">Our Features</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: "Expert Teachers", icon: "👩‍🏫" },
-                { title: "Quality Education", icon: "📚" },
-                { title: "Safe Environment", icon: "🏫" },
-              ].map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-blue-50 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-blue-800 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="py-16 bg-yellow-50">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -207,6 +185,35 @@ export default function Home1() {
             </div>
           </div>
         </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-blue-800 mb-12">Why Choose us?</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: "Expert Teachers", desc:"Learn from industry-certified professionals.", icon: "👩‍🏫" },
+                { title: "Quality Education", desc:"Delivering excellence through proven teaching methods.", icon: "📚" },
+                { title: "Safe Environment",desc:"A secure and supportive space for learning.", icon: "🏫" },
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-blue-50 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+                >
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-blue-800 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="py-16">
+          <Events/>
+        </section>
+
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
