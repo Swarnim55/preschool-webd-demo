@@ -31,8 +31,8 @@ const Nav1 = () => {
               { label: 'Home', link: '/' },
               { label: 'About', link: '/about' },
               { label: 'Classes', link: '/classes' },
-              { label: 'Teachers', link: '/teachers' },
-              { label: 'Pages', link: '/pages' },
+              { label: 'Our Team', link: '/team' },
+             
               { label: 'Contact', link: '/contact' },
             ].map((item) => (
               <a key={item.label} href={item.link} className="text-gray-700 hover:text-blue-600 transition-colors">
@@ -69,8 +69,8 @@ const Nav1 = () => {
             { label: 'Home', link: '/' },
             { label: 'About', link: '/about' },
             { label: 'Classes', link: '/classes' },
-            { label: 'Teachers', link: '/teachers' },
-            { label: 'Pages', link: '/pages' },
+            { label: 'Our Team', link: '/team' },
+ 
             { label: 'Contact', link: '/contact' },
           ].map((item, index) => (
             <motion.a

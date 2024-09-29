@@ -183,7 +183,7 @@ export default function AboutUs() {
             whileHover={{ boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)" }}
           >
             <Image
-              src="/placeholder.svg?height=150&width=150"
+              src="https://images.unsplash.com/photo-1698510561503-a8252790f5d6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Principal"
               width={150}
               height={150}

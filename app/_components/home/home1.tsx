@@ -230,7 +230,7 @@ export default function Home1() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-white text-lg font-semibold">Moment {index + 1}</h3>
-                      <p className="text-white text-sm">A brief description of this wonderful moment at Umang Academy.</p>
+                      <p className="text-white text-sm">A brief description of this wonderful moment.</p>
                     </div>
                   </div>
                 </motion.div>
