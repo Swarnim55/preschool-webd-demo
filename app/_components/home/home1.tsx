@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa"
 import Events from "../events/page"
+import PhilosophySection from "./philoshopy"
 
 const images = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/460995081_1068244768636880_613704042115508009_n-mlfl0W46qDRooSRYTZCRujvfaUzpyL.jpg",
@@ -210,10 +211,12 @@ export default function Home1() {
             </div>
           </div>
         </section>
-        <section className="py-16">
+        <section className="">
           <Events/>
         </section>
-
+<section className="bg-white">
+  <PhilosophySection/>
+  </section>
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">

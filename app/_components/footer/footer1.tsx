@@ -30,9 +30,9 @@ const Footer1 = () => {
           <h4 className="text-lg font-semibold mb-4 font-bubblegum">Contact Info</h4>
           <ul className="space-y-2">
             <li className="flex items-center"><Phone className="mr-2 w-4 h-4" /> +977 - (01) - 5639559</li>
-            <li className="flex items-center"><Mail className="mr-2 w-4 h-4" /> info@paradisekids678@gmail.com</li>
+            <li className="flex items-center"><Mail className="mr-2 w-4 h-4" /> info@kidsparadise.edu.com.np</li>
             <li className="flex items-center"><MapPin className="mr-2 w-4 h-4" /> Jatigal, Sanothimi, Bhaktapur, Nepal</li>
-            <li className="flex items-center"><Clock className="mr-2 w-4 h-4" /> Sun-Fri: 10AM-4PM</li>
+            <li className="flex items-center"><Clock className="mr-2 w-4 h-4" /> Sun-Fri: 9AM-4PM</li>
           </ul>
         </div>
         <div>
@@ -55,7 +55,7 @@ const Footer1 = () => {
     </div>
     <div className="bg-blue-900 text-white mt-5  py-6 text-center">
         <p>&copy; 2024 Kidz Paradise. All rights reserved.</p>
-        <p> Crafted by: VizTech Soutions</p>
+        <p> Crafted by: <a href="https://viztechsolutions.com.np" className="hover:text-blue-300">VizTech Solutions</a></p>
       </div>
   </footer>
   )
