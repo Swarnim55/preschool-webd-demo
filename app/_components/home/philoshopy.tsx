@@ -71,7 +71,7 @@ export default function PhilosophySection() {
               At our preschool, we embrace a holistic approach to early childhood education. We combine the best practices from various educational philosophies to create a unique and enriching experience for your child.
             </p>
             <p className="text-sky-900 mb-4">
-              Our curriculum is designed to stimulate curiosity, encourage creativity, and develop essential skills that will serve as a strong foundation for your child's future academic success.
+              {"Our curriculum is designed to foster creativity, curiosity, and critical thinking skills. We believe that children learn best through hands-on experiences and play-based activities. Our dedicated teachers provide a nurturing and supportive environment where children can explore, discover, and grow."}
             </p>
             <a href="/our-approach" className="inline-block bg-sky-500 text-white font-semibold py-2 px-4 rounded hover:bg-sky-600 transition-colors">
               Learn More
@@ -81,7 +81,7 @@ export default function PhilosophySection() {
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-bold text-sky-800 mb-4">Join Our Preschool Family</h3>
           <p className="text-sky-700 max-w-2xl mx-auto mb-6">
-            We invite you to become a part of our vibrant preschool community. Schedule a visit to see our philosophy in action and discover how we can nurture your child's growth and development.
+            {"We invite you to visit our preschool and learn more about our programs. Schedule a tour today and see firsthand how we can help your child thrive."}
           </p>
           <a href="/contact" className="inline-block bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-sky-700 transition-colors">
             Schedule a Visit

@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { InstagramLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons'
-import { Clock, Facebook, Mail, MapPin, Phone } from 'lucide-react'
+import { InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
+import { Clock, Facebook, Mail, MapPin, Phone } from "lucide-react"
 const Footer1 = () => {
   return (
     
@@ -21,7 +21,7 @@ const Footer1 = () => {
         <div>
           <h4 className="text-lg font-semibold mb-4 font-bubblegum">Quick Links</h4>
           <ul className="space-y-2">
-            {['About Us', 'Our Classes', 'Our Teachers', 'Contact Us'].map((item) => (
+            {["About Us", "Our Classes", "Our Teachers", "Contact Us"].map((item) => (
               <li key={item}><a href="#" className="hover:text-blue-300">{item}</a></li>
             ))}
           </ul>
